@@ -122,7 +122,8 @@ void Encode(const std::string& mime, const std::string& input_file, const Encode
   // https://www.androidos.net.cn/android/9.0.0_r8/xref/frameworks/native/headers/media_plugin/media/openmax/OMX_IVCommon.h
   AMediaFormat_setInt32(format, AMEDIAFORMAT_KEY_COLOR_FORMAT, 21);
   AMediaFormat_setInt32(format, AMEDIAFORMAT_KEY_FRAME_RATE, 60);
-  AMediaFormat_setInt32(format, AMEDIAFORMAT_KEY_I_FRAME_INTERVAL, -1);
+  // AMediaFormat_setInt32(format, AMEDIAFORMAT_KEY_I_FRAME_INTERVAL, -1);    // don't set -1 on rk3588 Android 14
+  AMediaFormat_setInt32(format, AMEDIAFORMAT_KEY_I_FRAME_INTERVAL, 100000);
   AMediaFormat_setInt32(format, AMEDIAFORMAT_KEY_BITRATE_MODE, 2);
   AMediaFormat_setInt32(format, AMEDIAFORMAT_KEY_BIT_RATE, parms.bitrate);
 

@@ -1,0 +1,15 @@
+
+ndk vp8 encode test
+
+1. build
+cd jni/
+export PATH=~/56T/code/zfw/tools/android-ndk-r27d::$PATH
+ndk-build -j20
+
+2. install
+adb push ../libs/arm64-v8a/codec_demo /data/local/tmp/
+
+3. test
+/data/local/tmp/codec_demo --codeType "video/x-vnd.on2.vp8" --width 1280 --height 720 --bitrate 4000000 --file /data/1280x720_nv12_back.yuv
+# output file: /data/local/tmp/output.ivf
+

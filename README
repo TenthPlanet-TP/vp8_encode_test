@@ -3,7 +3,7 @@ ndk vp8 encode test
 
 1. build
 cd jni/
-export PATH=~/56T/code/zfw/tools/android-ndk-r27d::$PATH
+export PATH=~/disk2/work/tools/android-ndk-r27d::$PATH
 ndk-build -j20
 
 2. install
